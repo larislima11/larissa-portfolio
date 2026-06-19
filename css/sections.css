@@ -18,6 +18,13 @@
   align-items: center;
   width: 100%;
 }
+.hero-status-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
 .hero-status {
   display: inline-flex;
   align-items: center;
@@ -29,8 +36,28 @@
   font-family: var(--font-mono);
   font-size: 0.75rem;
   color: #6ee7b7;
-  margin-bottom: 24px;
 }
+.hero-studio-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--violet-glow);
+  background: var(--grad-brand-soft);
+  border: 1px solid var(--border);
+  transition: color 0.2s, background 0.2s, border-color 0.2s;
+}
+.hero-studio-link span { transition: transform 0.2s; }
+.hero-studio-link:hover {
+  color: var(--fg-0);
+  background: rgba(168, 85, 247, 0.18);
+  border-color: var(--border-strong);
+}
+.hero-studio-link:hover span { transform: translate(2px, -2px); }
 .hero-eyebrow {
   display: flex;
   align-items: center;
