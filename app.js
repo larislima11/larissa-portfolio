@@ -162,16 +162,29 @@
       });
     }
 
-    // ---- CV download tracking (graceful fallback) -------------------
-    // Se o backend não estiver rodando (abriu o HTML direto), cai pra arquivo estático.
-    document.querySelectorAll('[data-cv-download]').forEach((el) => {
-      el.addEventListener('click', (e) => {
-        const onHttp = location.protocol.startsWith('http');
-        if (!onHttp) {
-          e.preventDefault();
-          window.open('assets/CV_Larissa_Lima_de_Almeida.pdf', '_blank');
-        }
+    // ---- CV download dropdown (PT / EN) -----------------------------
+    const cvDl = document.querySelector('.cv-dl');
+    if (cvDl) {
+      const trigger = cvDl.querySelector('.cv-dl-trigger');
+      const closeMenu = () => {
+        cvDl.classList.remove('is-open');
+        trigger.setAttribute('aria-expanded', 'false');
+      };
+      trigger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const open = cvDl.classList.toggle('is-open');
+        trigger.setAttribute('aria-expanded', String(open));
       });
-    });
+      // Fecha ao escolher uma opção, ao clicar fora ou com Esc
+      cvDl.querySelectorAll('.cv-dl-menu a').forEach((a) => {
+        a.addEventListener('click', closeMenu);
+      });
+      document.addEventListener('click', (e) => {
+        if (!cvDl.contains(e.target)) closeMenu();
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeMenu();
+      });
+    }
   });
 })();

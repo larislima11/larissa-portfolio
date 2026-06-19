@@ -235,6 +235,58 @@
 }
 .btn-ghost:hover { background: rgba(168, 85, 247, 0.12); border-color: var(--violet); }
 
+/* ---------- CV DOWNLOAD DROPDOWN ---------- */
+.cv-dl { position: relative; display: inline-block; }
+.cv-dl-trigger { cursor: pointer; }
+.cv-dl-caret { transition: transform 0.2s; opacity: 0.7; }
+.cv-dl.is-open .cv-dl-caret { transform: rotate(180deg); }
+.cv-dl-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 6px;
+  background: rgba(10, 6, 19, 0.97);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  border: 1px solid var(--border-strong);
+  border-radius: 16px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transform: translateY(-8px);
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 20;
+}
+.cv-dl.is-open .cv-dl-menu { opacity: 1; transform: translateY(0); pointer-events: auto; }
+.cv-dl-menu a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--fg-1);
+  white-space: nowrap;
+  transition: color 0.2s, background 0.2s;
+}
+.cv-dl-menu a:hover { color: var(--fg-0); background: rgba(168, 85, 247, 0.12); }
+.cv-dl-flag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: white;
+  padding: 3px 7px;
+  border-radius: 6px;
+  background: var(--grad-brand);
+  box-shadow: var(--glow-violet-sm);
+}
+
 /* ---------- CARDS ---------- */
 .card {
   background: linear-gradient(180deg, var(--bg-2), var(--bg-1));
