@@ -61,6 +61,17 @@
 }
 .nav-links a:hover { color: var(--fg-0); background: rgba(168, 85, 247, 0.08); }
 .nav-links a.active { color: var(--fg-0); background: rgba(168, 85, 247, 0.12); }
+.nav-links a.nav-ext {
+  color: var(--violet-glow);
+  border: 1px solid var(--border-strong);
+  background: rgba(168, 85, 247, 0.06);
+}
+.nav-links a.nav-ext span { font-size: 0.9em; }
+.nav-links a.nav-ext:hover {
+  color: var(--fg-0);
+  background: rgba(168, 85, 247, 0.14);
+  border-color: var(--violet);
+}
 .nav-right { display: flex; align-items: center; gap: 10px; }
 
 /* Language switcher */
