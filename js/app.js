@@ -253,5 +253,30 @@
         if (nav.classList.contains('is-open') && !nav.contains(e.target)) closeMenu();
       });
     }
+
+    // ---- CV download dropdown (PT / EN) -----------------------------
+    const cvDl = document.querySelector('.cv-dl');
+    if (cvDl) {
+      const trigger = cvDl.querySelector('.cv-dl-trigger');
+      const closeCv = () => {
+        cvDl.classList.remove('is-open');
+        trigger.setAttribute('aria-expanded', 'false');
+      };
+      trigger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const open = cvDl.classList.toggle('is-open');
+        trigger.setAttribute('aria-expanded', String(open));
+      });
+      // Fecha ao escolher uma opção, ao clicar fora ou com Esc
+      cvDl.querySelectorAll('.cv-dl-menu a').forEach((a) =>
+        a.addEventListener('click', closeCv)
+      );
+      document.addEventListener('click', (e) => {
+        if (!cvDl.contains(e.target)) closeCv();
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeCv();
+      });
+    }
   });
 })();
