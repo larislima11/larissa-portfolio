@@ -1,0 +1,173 @@
+/* ============================================================
+   LARISSA LIMA · PORTFOLIO
+   Identidade tech: dark mode futurista, roxo + azul neon
+   ============================================================ */
+
+:root {
+  /* Background scale (roxo profundo) */
+  --bg-0: #08040f;          /* deepest */
+  --bg-1: #0e0822;          /* page bg */
+  --bg-2: #150d2e;          /* card bg */
+  --bg-3: #1c1340;          /* elevated */
+  --bg-4: #241852;          /* hover */
+
+  /* Foreground scale */
+  --fg-0: #f5f3ff;          /* primary text */
+  --fg-1: #cbc4e8;          /* secondary */
+  --fg-2: #8b82b5;          /* tertiary / labels */
+  --fg-3: #5a5278;          /* muted */
+
+  /* Brand: roxo + azul neon */
+  --violet: #a855f7;
+  --violet-glow: #c084fc;
+  --indigo: #6366f1;
+  --blue: #3b82f6;
+  --cyan: #22d3ee;
+
+  /* Gradient signature */
+  --grad-brand: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%);
+  --grad-brand-soft: linear-gradient(135deg, rgba(139, 92, 246, 0.15) 0%, rgba(59, 130, 246, 0.15) 100%);
+  --grad-text: linear-gradient(135deg, #f5d0fe 0%, #c4b5fd 30%, #a5b4fc 60%, #7dd3fc 100%);
+
+  /* Borders */
+  --border: rgba(168, 85, 247, 0.14);
+  --border-strong: rgba(168, 85, 247, 0.32);
+  --border-blue: rgba(59, 130, 246, 0.24);
+
+  /* Glows */
+  --glow-violet: 0 0 40px rgba(168, 85, 247, 0.35);
+  --glow-violet-sm: 0 0 16px rgba(168, 85, 247, 0.45);
+  --glow-blue: 0 0 40px rgba(59, 130, 246, 0.35);
+
+  /* Typography */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'Space Grotesk', 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+
+  /* Layout */
+  --max-w: 1180px;
+  --radius: 14px;
+  --radius-sm: 8px;
+  --radius-lg: 22px;
+}
+
+/* ---------- RESET ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; padding: 0; }
+html {
+  scroll-behavior: smooth;
+  background: var(--bg-1);
+}
+
+body {
+  font-family: var(--font-sans);
+  background: transparent;
+  color: var(--fg-0);
+  line-height: 1.6;
+  font-size: 16px;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+img, svg { display: block; max-width: 100%; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+a { color: inherit; text-decoration: none; }
+
+/* ---------- BACKGROUND ATMOSPHERE ---------- */
+.bg-atmosphere {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+.bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(168, 85, 247, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(168, 85, 247, 0.06) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse at 50% 0%, black 30%, transparent 75%);
+}
+.bg-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.5;
+}
+.bg-glow.violet { top: -10%; left: -5%; width: 560px; height: 560px; background: #7c3aed; opacity: 0.62; }
+.bg-glow.blue   { top: 30%; right: -10%; width: 600px; height: 600px; background: #4338ca; opacity: 0.42; }
+.bg-glow.cyan   { bottom: 0; left: 30%; width: 440px; height: 440px; background: #6d28d9; opacity: 0.32; }
+
+#neural-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.85;
+  mix-blend-mode: screen;
+}
+
+/* ---------- LAYOUT ---------- */
+.container {
+  width: 100%;
+  max-width: var(--max-w);
+  margin-inline: auto;
+  padding-inline: 28px;
+}
+section {
+  padding-block: 120px 80px;
+  position: relative;
+}
+@media (max-width: 720px) {
+  section { padding-block: 80px 40px; }
+}
+
+/* ---------- TYPOGRAPHY ---------- */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--fg-0);
+}
+h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); letter-spacing: -0.035em; }
+h2 { font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -0.03em; }
+h3 { font-size: 1.35rem; }
+h4 { font-size: 1.05rem; }
+p  { color: var(--fg-1); text-wrap: pretty; }
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--violet-glow);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.eyebrow::before {
+  content: '';
+  width: 28px; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--violet-glow));
+}
+
+.text-gradient {
+  background: var(--grad-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 10px rgba(196, 132, 252, 0.45));
+  font-weight: 700;
+  display: inline-block;
+}
+
+.section-header { margin-bottom: 56px; }
+.section-header .eyebrow { margin-bottom: 18px; }
+.section-header p { margin-top: 14px; max-width: 600px; color: var(--fg-2); }

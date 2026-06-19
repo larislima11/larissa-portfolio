@@ -1,0 +1,16 @@
+node_modules
+.next
+out
+.env
+.env.local
+.env*.local
+.vercel
+.DS_Store
+*.log
+data/
+*.jsonl
+
+# Claude Code local settings
+.claude/settings.local.json
+
+.vercel

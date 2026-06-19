@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Larissa Lima ·Fullstack Web Developer & Data Engineer</title>
+<meta name="description" content="Portfolio de Larissa Lima ·Fullstack Web Developer & Data Engineer. Fundadora da Lima Studio Web.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/sections.css">
+<link rel="stylesheet" href="css/sections-2.css">
+<link rel="stylesheet" href="css/tech.css">
+</head>
+<body>
+
+<!-- Atmospheric background -->
+<div class="bg-atmosphere" aria-hidden="true">
+  <div class="bg-grid"></div>
+  <div class="bg-glow violet"></div>
+  <div class="bg-glow blue"></div>
+  <div class="bg-glow cyan"></div>
+  <canvas id="neural-canvas"></canvas>
+</div>
+
+<!-- ========== NAV ========== -->
+<nav class="nav">
+  <a href="#home" class="nav-logo">
+    <span class="nav-logo-mark">L</span>
+    <span>larilima.dev</span>
+  </a>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#home"        data-i18n="nav.home">home</a></li>
+    <li><a href="#about"       data-i18n="nav.about">sobre</a></li>
+    <li><a href="#studio"      data-i18n="nav.studio">studio</a></li>
+    <li><a href="#projects"    data-i18n="nav.projects">projetos</a></li>
+    <li><a href="#skills"      data-i18n="nav.skills">skills</a></li>
+    <li><a href="#experience"  data-i18n="nav.experience">experiência</a></li>
+    <li><a href="#contact"     data-i18n="nav.contact">contato</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang-switch" role="tablist" aria-label="Language">
+      <button data-lang="pt" class="active">PT</button>
+      <button data-lang="en">EN</button>
+      <button data-lang="es">ES</button>
+    </div>
+    <div class="nav-socials">
+      <a href="https://wa.me/5515981605571" target="_blank" rel="noreferrer" class="nav-social" aria-label="WhatsApp" data-i18n-attr="aria-label:nav.whatsapp" title="+55 15 98160-5571">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+        </svg>
+      </a>
+      <a href="mailto:larissaalmeidalima9@gmail.com" class="nav-social" aria-label="Email" data-i18n-attr="aria-label:nav.email" title="larissaalmeidalima9@gmail.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+          <polyline points="22,6 12,13 2,6"/>
+        </svg>
+      </a>
+    </div>
+    <a href="#contact" class="nav-cta" data-i18n="nav.cta">Vamos conversar?</a>
+    <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-links">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section id="home" class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="hero-status">
+        <span class="live-dot"></span>
+        <span data-i18n="hero.status">Disponível para novos projetos</span>
+      </div>
+      <div class="hero-eyebrow">
+        <span data-i18n="hero.tagline">Desenvolvedora · Founder · Builder</span>
+        <span class="hero-year">2026</span>
+      </div>
+      <h1 class="hero-name" id="hero-name" aria-label="Larissa Lima">Larissa Lima</h1>
+      <span class="hero-role" data-i18n="hero.role">// Desenvolvedora Full Stack & Data Engineer</span>
+      <p class="hero-lead" data-i18n="hero.lead">Construo aplicações web modernas do banco à interface. Fundadora da Lima Studio Web: sites, landing pages e sistemas sob medida, com base sólida em dados e cloud.</p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary"><span data-i18n="hero.cta.primary">Ver projetos</span> →</a>
+        <a href="assets/CV_Larissa_Lima_de_Almeida.pdf" download class="btn btn-ghost"><span data-i18n="hero.cta.secondary">Baixar currículo</span></a>
+      </div>
+      <div class="hero-meta">
+        <div class="hero-meta-item">
+          <div class="label" data-i18n="hero.meta.exp.label">Atuação</div>
+          <div class="value"><span class="accent" data-i18n="hero.meta.exp.value">Founder · Lima Studio Web</span></div>
+        </div>
+        <div class="hero-meta-item">
+          <div class="label" data-i18n="hero.meta.proj.label">Formação</div>
+          <div class="value">
+            <span class="accent" data-i18n="hero.meta.proj.value">ADS · Facens</span>
+            <span class="value-sub" data-i18n="hero.meta.proj.sub">MBA em progresso · USP/Esalq</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Foto em evidência (interativa) -->
+    <div class="hero-portrait" id="hero-portrait">
+      <img src="assets/larissa.jpg" alt="Larissa Lima de Almeida dos Santos" loading="eager">
+      <div class="portrait-clock">
+        <span class="pc-city">São Paulo - BR</span>
+        <span class="pc-time" id="local-time">--:--</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== STACK MARQUEE (outdoor digital) ========== -->
+<div class="marquee" aria-label="Stack de tecnologias">
+  <span class="marquee-tag">Stack</span>
+  <div class="marquee-viewport">
+    <div class="marquee-track">
+      <span>Vue 3</span><span>Angular</span><span>Node.js</span><span>TypeScript</span><span>AWS</span><span>Docker</span><span>PostgreSQL</span><span>MySQL</span><span>SQL Server</span><span>REST API</span><span>Tailwind</span>
+      <span>Vue 3</span><span>Angular</span><span>Node.js</span><span>TypeScript</span><span>AWS</span><span>Docker</span><span>PostgreSQL</span><span>MySQL</span><span>SQL Server</span><span>REST API</span><span>Tailwind</span>
+    </div>
+  </div>
+</div>
+
+<!-- ========== ABOUT ========== -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-body">
+        <span class="eyebrow" data-i18n="about.eyebrow">02 · Sobre mim</span>
+        <h2 class="about-heading">
+          <span data-i18n="about.title.a">Desenvolvedora por formação,</span>
+          <span class="em" data-i18n="about.title.em">founder por vocação.</span>
+        </h2>
+        <p class="lead" data-i18n="about.lead">Sou desenvolvedora fullstack e engenheira de dados. Construo aplicações web modernas, do banco à interface, e fundei a Lima Studio Web, onde entrego sites e sistemas sob medida para negócios.</p>
+        <p data-i18n="about.p2">Combino desenvolvimento prático (JavaScript, React/Next.js) com base forte em SQL, Python, AWS e pipelines de dados. Atualmente curso MBA em Data Science & Analytics na USP/Esalq.</p>
+        <div class="about-status">
+          <span class="live-dot"></span>
+          <span data-i18n="about.status">Disponível p/ projetos</span>
+        </div>
+        <div class="about-stats">
+          <div class="about-stat">
+            <span class="num">4+</span>
+            <span class="stat-label" data-i18n="about.stat1">Projetos entregues</span>
+          </div>
+          <div class="about-stat">
+            <span class="num">+12</span>
+            <span class="stat-label" data-i18n="about.stat2">Tecnologias</span>
+          </div>
+          <div class="about-stat">
+            <span class="num">100%</span>
+            <span class="stat-label" data-i18n="about.stat3">Remoto</span>
+          </div>
+          <div class="about-stat">
+            <span class="num">&lt;24h</span>
+            <span class="stat-label" data-i18n="about.stat4">Tempo de resposta</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Animação de IDE/terminal -->
+      <div class="terminal" aria-hidden="true">
+        <div class="terminal-bar">
+          <span class="terminal-dot r"></span>
+          <span class="terminal-dot y"></span>
+          <span class="terminal-dot g"></span>
+          <span class="terminal-title" data-i18n="term.title">larissa@portfolio: ~</span>
+        </div>
+        <div class="terminal-body">
+          <div class="line"><span class="prompt">$</span><span class="cmd" data-i18n="term.cmd1">whoami</span></div>
+          <div class="line"><span class="out" data-i18n="term.out1">fullstack-dev · data-engineer</span></div>
+          <div class="line"><span class="prompt">$</span><span class="cmd" data-i18n="term.cmd2">cat profile.json</span></div>
+          <div class="line"><span class="out">{</span></div>
+          <div class="line"><span class="out">&nbsp;&nbsp;"<span class="key" data-i18n="term.k.name">name</span>": "<span class="str" data-i18n="term.v.name">Larissa Lima</span>",</span></div>
+          <div class="line"><span class="out">&nbsp;&nbsp;"<span class="key" data-i18n="term.k.focus">focus</span>": "<span class="str" data-i18n="term.v.focus">web · APIs · cloud</span>",</span></div>
+          <div class="line"><span class="out">&nbsp;&nbsp;"<span class="key" data-i18n="term.k.open">open_to_work</span>": <span class="num">true</span></span></div>
+          <div class="line"><span class="out">}</span></div>
+          <div class="line"><span class="prompt">$</span><span class="cmd" data-i18n="term.cmd3">echo "build with me"</span></div>
+          <div class="line"><span class="out" data-i18n="term.out3">let's ship something great →</span><span class="terminal-cursor"></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== LIMA STUDIO WEB (founder) ========== -->
+<section id="studio">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow" data-i18n="studio.eyebrow">03 · Lima Studio Web</span>
+      <h2>
+        <span data-i18n="studio.title.a">Meu estúdio web,</span>
+        <span class="em" data-i18n="studio.title.em">fundado e tocado por mim.</span>
+      </h2>
+      <p data-i18n="studio.sub">Estúdio web que eu fundei e toco de ponta a ponta, do briefing ao deploy.</p>
+    </div>
+
+    <div class="studio-panel">
+      <!-- Left: brand + pitch + actions -->
+      <div class="studio-main">
+        <div class="studio-brand">
+          <span class="studio-mark">L</span>
+          <div class="studio-id">
+            <span class="studio-name">Lima Studio Web</span>
+            <span class="studio-role" data-i18n="studio.role">Founder &amp; Fullstack Developer</span>
+          </div>
+        </div>
+        <p class="studio-tagline" data-i18n="studio.tagline">Seu próximo cliente está te procurando no Google. Faça ele te encontrar.</p>
+        <p class="studio-pitch" data-i18n="studio.pitch">Crio sites modernos, rápidos e fáceis de achar no Google, sob medida para o seu negócio atrair mais clientes e transmitir credibilidade já no primeiro clique.</p>
+        <div class="studio-badges">
+          <span class="chip"><span class="chip-dot"></span><span data-i18n="studio.badge.1">No ar e trilíngue</span></span>
+          <span class="chip"><span class="chip-dot"></span><span data-i18n="studio.badge.2">Otimizado para SEO</span></span>
+          <span class="chip"><span class="chip-dot"></span><span data-i18n="studio.badge.3">Entrega ponta a ponta</span></span>
+        </div>
+        <div class="studio-actions">
+          <a href="https://limastudioweb.vercel.app" target="_blank" rel="noreferrer" class="btn btn-primary"><span data-i18n="studio.cta.site">Visitar o site</span> ↗</a>
+          <a href="https://wa.me/5515981605571" target="_blank" rel="noreferrer" class="btn btn-ghost"><span data-i18n="studio.cta.quote">Pedir orçamento</span></a>
+        </div>
+      </div>
+
+      <!-- Right: live preview -->
+      <a class="studio-preview" href="https://limastudioweb.vercel.app" target="_blank" rel="noreferrer" aria-label="Abrir Lima Studio Web">
+        <div class="studio-preview-bar">
+          <span class="spb-dot r"></span><span class="spb-dot y"></span><span class="spb-dot g"></span>
+          <span class="spb-url">limastudioweb.vercel.app</span>
+        </div>
+        <div class="studio-preview-shot">
+          <img src="https://image.thum.io/get/width/1200/crop/900/noanimate/https://limastudioweb.vercel.app/" alt="Screenshot do site Lima Studio Web" loading="lazy">
+        </div>
+      </a>
+    </div>
+
+    <!-- Services -->
+    <div class="studio-services">
+      <span class="studio-block-tag" data-i18n="studio.services.tag">O que entrego</span>
+      <div class="studio-svc-grid">
+        <div class="studio-svc"><span class="svc-num">01</span><span data-i18n="studio.svc.1">Sites institucionais</span></div>
+        <div class="studio-svc"><span class="svc-num">02</span><span data-i18n="studio.svc.2">Lojas online</span></div>
+        <div class="studio-svc"><span class="svc-num">03</span><span data-i18n="studio.svc.3">Landing pages</span></div>
+        <div class="studio-svc"><span class="svc-num">04</span><span data-i18n="studio.svc.4">Sistemas sob medida</span></div>
+        <div class="studio-svc"><span class="svc-num">05</span><span data-i18n="studio.svc.5">Dados e automação</span></div>
+        <div class="studio-svc"><span class="svc-num">06</span><span data-i18n="studio.svc.6">Manutenção e suporte</span></div>
+      </div>
+    </div>
+
+    <!-- Stack -->
+    <div class="studio-stack">
+      <span class="studio-block-tag" data-i18n="studio.stack.tag">Stack do estúdio</span>
+      <div class="studio-chips">
+        <span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span><span class="chip">TypeScript</span><span class="chip">React.js</span><span class="chip">Next.js</span><span class="chip">Vue.js</span><span class="chip">Angular</span><span class="chip">Tailwind CSS</span><span class="chip">Shadcn UI</span><span class="chip">Node.js · NestJS / Express</span><span class="chip">Python · FastAPI / Django</span><span class="chip">Java · Spring Boot</span><span class="chip">SQL Server</span><span class="chip">AWS</span><span class="chip">CI/CD</span><span class="chip">SEO</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PROJECTS ========== -->
+<section id="projects">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow" data-i18n="proj.eyebrow">04 · Projetos selecionados</span>
+      <h2 data-i18n="proj.title">Coisas que construí.</h2>
+      <p data-i18n="proj.sub">Trabalho real entregue na Lima Studio Web, em projetos de dados e na pesquisa de MBA.</p>
+    </div>
+
+    <!-- Web Development (em destaque) -->
+    <div class="proj-group featured">
+      <div class="proj-group-head">
+        <span class="proj-group-tag" data-i18n="proj.web.tag">Em destaque</span>
+        <h3 class="proj-group-title" data-i18n="proj.web.title">Desenvolvimento Web</h3>
+        <p class="proj-group-sub" data-i18n="proj.web.sub">Sites e sistemas no ar, entregues na Lima Studio Web.</p>
+      </div>
+      <div class="projects-grid">
+
+        <article class="card project">
+          <div class="project-preview">
+            <img src="https://image.thum.io/get/width/1200/crop/800/noanimate/https://www.coreag.com.br/" alt="Screenshot do site da Agência CORE" loading="lazy">
+          </div>
+          <div class="project-body">
+            <div class="project-head">
+              <h3 data-i18n="proj.1.title">Agência CORE · Site Institucional</h3>
+              <span class="project-num">01 / 02</span>
+            </div>
+            <p data-i18n="proj.1.desc">Site institucional dark e minimalista para a agência de branding e marketing digital CORE (coreag.com.br). Multipágina, com cases, divisões (core.inc, blog, tria 3d) e identidade marcante, construído em Next.js.</p>
+            <div class="project-stack">
+              <span class="chip">Next.js</span><span class="chip">React</span><span class="chip">Responsive</span><span class="chip">Vercel</span>
+            </div>
+            <div class="project-links">
+              <a href="https://www.coreag.com.br/" target="_blank" rel="noreferrer" data-i18n="proj.live">ver demo</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card project">
+          <div class="project-preview">
+            <img src="assets/yoshis.png" alt="Screenshot do site do restaurante Yoshi's" loading="lazy">
+          </div>
+          <div class="project-body">
+            <div class="project-head">
+              <h3 data-i18n="proj.5.title">Yoshi's · Restaurante Japonês</h3>
+              <span class="project-num">02 / 02</span>
+            </div>
+            <p data-i18n="proj.5.desc">Site para o Yoshi's, restaurante japonês de Sorocaba com mais de 30 anos de tradição. Visual sofisticado com galeria de fotos, integração de delivery e reservas via WhatsApp, construído em Next.js.</p>
+            <div class="project-stack">
+              <span class="chip">Next.js</span><span class="chip">React</span><span class="chip">Responsive</span><span class="chip">Delivery</span>
+            </div>
+            <div class="project-links">
+              <a href="https://www.yoshis.com.br/" target="_blank" rel="noreferrer" data-i18n="proj.live">ver site</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+    <!-- Data Science -->
+    <div class="proj-group">
+      <div class="proj-group-head">
+        <span class="proj-group-tag" data-i18n="proj.data.tag">Dados</span>
+        <h3 class="proj-group-title" data-i18n="proj.data.title">Data Science & Engenharia de Dados</h3>
+        <p class="proj-group-sub" data-i18n="proj.data.sub">Pipelines, análise e machine learning em Python e SQL.</p>
+      </div>
+      <div class="projects-grid">
+
+        <article class="card project">
+          <div class="project-preview">
+            <img src="assets/etl.png" alt="Screenshot do projeto de ETL · análise de vendas de supermercado" loading="lazy">
+          </div>
+          <div class="project-body">
+            <div class="project-head">
+              <h3 data-i18n="proj.2.title">Análise de Comportamento · ETL</h3>
+              <span class="project-num">01 / 02</span>
+            </div>
+            <p data-i18n="proj.2.desc">Pipeline de dados em Python (Pandas) e SQL para analisar dados transacionais e de clientes, gerando insights de padrões de compra e segmentação.</p>
+            <div class="project-stack">
+              <span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">SQL</span><span class="chip">ETL</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/larislima11/ETL-data-analysis-supermarket-sales" target="_blank" rel="noreferrer" data-i18n="proj.code">ver código</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card project">
+          <div class="project-preview">
+            <img src="assets/datamining.png" alt="Screenshot do projeto de Data Mining" loading="lazy">
+          </div>
+          <div class="project-body">
+            <div class="project-head">
+              <h3 data-i18n="proj.3.title">Data Mining · Business Intelligence</h3>
+              <span class="project-num">02 / 02</span>
+            </div>
+            <p data-i18n="proj.3.desc">Coletânea de projetos de mineração de dados em Python (Jupyter): previsão de consumo de energia, regras de associação (Apriori), segmentação de clientes (K-Means) e classificação com Random Forest.</p>
+            <div class="project-stack">
+              <span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">scikit-learn</span><span class="chip">Jupyter</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/larislima11/data-mining" target="_blank" rel="noreferrer" data-i18n="proj.code">ver código</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SKILLS ========== -->
+<section id="skills">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow" data-i18n="skills.eyebrow">05 · Skills & Tools</span>
+      <h2 data-i18n="skills.title">Stack que uso no dia a dia.</h2>
+      <p data-i18n="skills.sub">Ferramentas testadas em produção. Sempre aberta a aprender o que o projeto pedir.</p>
+    </div>
+    <div class="skills-grid">
+
+      <div class="skill-group">
+        <div class="skill-group-head">
+          <h4 data-i18n="skills.frontend">Frontend</h4>
+        </div>
+        <ul class="skill-list">
+          <li data-mono="JS">JavaScript (ES6+)</li>
+          <li data-mono="Re">React · Next.js</li>
+          <li data-mono="Ht">HTML5 · CSS3</li>
+          <li data-mono="Rd">Responsive design</li>
+          <li data-mono="Tw">Tailwind CSS</li>
+          <li data-mono="Ap">REST APIs</li>
+        </ul>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-head">
+          <h4 data-i18n="skills.backend">Backend & ETL</h4>
+        </div>
+        <ul class="skill-list">
+          <li data-mono="Py">Python (Pandas · NumPy)</li>
+          <li data-mono="No">Node.js · Express</li>
+          <li data-mono="Ja">Java</li>
+          <li data-mono="Et">Informatica · ETL</li>
+          <li data-mono="Ap">REST APIs</li>
+          <li data-mono="Ba">Batch processing</li>
+        </ul>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-head">
+          <h4 data-i18n="skills.data">Data Science & ML</h4>
+        </div>
+        <ul class="skill-list">
+          <li data-mono="Sq">SQL · T-SQL</li>
+          <li data-mono="Ss">SQL Server · Sybase</li>
+          <li data-mono="Pd">Pandas · NumPy</li>
+          <li data-mono="Sk">scikit-learn</li>
+          <li data-mono="Ml">Machine Learning</li>
+          <li data-mono="Bd">Big Data · Jupyter</li>
+        </ul>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-head">
+          <h4 data-i18n="skills.infra">Cloud & Ops</h4>
+        </div>
+        <ul class="skill-list">
+          <li data-mono="Aw">AWS (EC2 · S3 · Lambda)</li>
+          <li data-mono="Gi">Git · GitHub</li>
+          <li data-mono="Ci">CI/CD · GitHub Actions</li>
+          <li data-mono="L3">L2/L3 Production Support</li>
+          <li data-mono="Dg">Data Governance</li>
+          <li data-mono="Ag">Agile · Scrum</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========== EXPERIENCE & EDUCATION ========== -->
+<section id="experience">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow" data-i18n="exp.eyebrow">06 · Trajetória</span>
+      <h2 data-i18n="exp.title">Onde estive e o que aprendi.</h2>
+    </div>
+    <div class="timeline-grid">
+      <div class="timeline-col" id="experience-col">
+        <h3 class="col-title" data-i18n="exp.col.work">Experiência</h3>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-period" data-i18n="exp.1.period">2025 - agora</div>
+            <h4 data-i18n="exp.1.role">Fundadora & Fullstack Developer</h4>
+            <div class="tl-org" data-i18n="exp.1.org">Lima Studio Web · Remoto</div>
+            <p data-i18n="exp.1.desc">Estúdio web que constrói sites, landing pages e sistemas sob medida, da descoberta ao deploy. Entreguei o site da Agência CORE em React/Next.js.</p>
+          </div>
+          <div class="tl-item">
+            <div class="tl-period" data-i18n="exp.2.period">Projetos</div>
+            <h4 data-i18n="exp.2.role">Engenharia de Dados & ETL</h4>
+            <div class="tl-org" data-i18n="exp.2.org">Pipelines · Governança de Dados</div>
+            <p data-i18n="exp.2.desc">Pipelines em Python e SQL, otimização de processos e suporte L2/L3. Migração de legado Sybase → SQL Server com foco em conformidade.</p>
+          </div>
+          <div class="tl-item">
+            <div class="tl-period" data-i18n="exp.3.period">Pesquisa</div>
+            <h4 data-i18n="exp.3.role">Cibersegurança Preditiva (ML)</h4>
+            <div class="tl-org" data-i18n="exp.3.org">Tese de MBA · USP/Esalq</div>
+            <p data-i18n="exp.3.desc">Framework de Machine Learning para Indústria 4.0 com pipelines de alto volume para análise preditiva de vulnerabilidades.</p>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-col" id="education">
+        <h3 class="col-title" data-i18n="exp.col.edu">Formação</h3>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-period" data-i18n="edu.1.period">2025 - 2027</div>
+            <h4 data-i18n="edu.1.role">MBA em Data Science & Analytics</h4>
+            <div class="tl-org" data-i18n="edu.1.org">USP/Esalq · Pós-graduação</div>
+            <p data-i18n="edu.1.desc">Modelagem estatística avançada, Machine Learning e estratégia de Big Data.</p>
+          </div>
+          <div class="tl-item">
+            <div class="tl-period" data-i18n="edu.2.period">2022 - 2024</div>
+            <h4 data-i18n="edu.2.role">Análise e Desenvolvimento de Sistemas</h4>
+            <div class="tl-org" data-i18n="edu.2.org">Facens · Tecnóloga (formada)</div>
+            <p data-i18n="edu.2.desc">Engenharia de Software, bancos de dados (DBMS) e otimização de algoritmos.</p>
+          </div>
+          <div class="tl-item">
+            <div class="tl-period" data-i18n="edu.3.period">Cursos</div>
+            <h4 data-i18n="edu.3.role">Certificações</h4>
+            <div class="tl-org" data-i18n="edu.3.org">Udemy · JS · Java · Python · SQL</div>
+            <p data-i18n="edu.3.desc">Trilhas de JavaScript, Java, Python e SQL para análise de dados.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CONTACT ========== -->
+<section id="contact" class="contact">
+  <div class="container">
+    <div class="contact-final">
+
+      <!-- Left: pitch + CTA -->
+      <div class="contact-final-left">
+        <div class="contact-badge">
+          <span class="live-dot"></span>
+          <span data-i18n="contact.badge">Disponível para 2026</span>
+        </div>
+        <h2 class="contact-final-title">
+          <span data-i18n="contact.title.a">Tem um projeto</span><br>
+          <span class="em" data-i18n="contact.title.em">em mente</span><span data-i18n="contact.title.b">?</span>
+        </h2>
+        <p class="contact-final-lead" data-i18n="contact.lead">Estou disponível para projetos freelance, consultorias e parcerias. Respondo geralmente em poucas horas. A forma mais rápida é pelo WhatsApp.</p>
+        <a href="https://wa.me/5515981605571" target="_blank" rel="noreferrer" class="btn-whats">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49 0 1.47 1.07 2.89 1.22 3.09.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35zM12 2a10 10 0 0 0-8.6 15.06L2 22l5.06-1.33A10 10 0 1 0 12 2z"/>
+          </svg>
+          <span data-i18n="contact.whats.btn">WhatsApp direto</span>
+        </a>
+      </div>
+
+      <!-- Right: contact cards -->
+      <div class="contact-final-right">
+
+        <a class="contact-link-card" href="https://wa.me/5515981605571" target="_blank" rel="noreferrer" aria-label="WhatsApp">
+          <span class="clc-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49 0 1.47 1.07 2.89 1.22 3.09.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35zM12 2a10 10 0 0 0-8.6 15.06L2 22l5.06-1.33A10 10 0 1 0 12 2z"/></svg>
+          </span>
+          <span class="clc-text">
+            <span class="clc-label">WhatsApp</span>
+            <span class="clc-value">+55 15 98160-5571</span>
+          </span>
+          <span class="clc-arrow" aria-hidden="true">↗</span>
+        </a>
+
+        <a class="contact-link-card" href="mailto:larissaalmeidalima9@gmail.com" aria-label="Email">
+          <span class="clc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </span>
+          <span class="clc-text">
+            <span class="clc-label">Email</span>
+            <span class="clc-value">larissaalmeidalima9@gmail.com</span>
+          </span>
+          <span class="clc-arrow" aria-hidden="true">↗</span>
+        </a>
+
+        <a class="contact-link-card" href="https://www.linkedin.com/in/larissalima01" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+          <span class="clc-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+          </span>
+          <span class="clc-text">
+            <span class="clc-label">LinkedIn</span>
+            <span class="clc-value">linkedin.com/in/larissalima01</span>
+          </span>
+          <span class="clc-arrow" aria-hidden="true">↗</span>
+        </a>
+
+        <a class="contact-link-card" href="https://github.com/larislima11" target="_blank" rel="noreferrer" aria-label="GitHub">
+          <span class="clc-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58l-.01-2.05c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.11-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6.01 0c2.29-1.55 3.3-1.23 3.3-1.23.65 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.62-5.48 5.92.43.37.81 1.1.81 2.22l-.01 3.29c0 .32.21.7.82.58A12 12 0 0 0 24 12.5C24 5.87 18.63.5 12 .5z"/></svg>
+          </span>
+          <span class="clc-text">
+            <span class="clc-label">GitHub</span>
+            <span class="clc-value">github.com/larislima11</span>
+          </span>
+          <span class="clc-arrow" aria-hidden="true">↗</span>
+        </a>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== OUTRO · LET'S BUILD ========== -->
+<section class="outro">
+  <div class="container outro-inner">
+    <div class="outro-photo">
+      <img src="assets/larissa.jpg" alt="Larissa Lima" loading="lazy">
+    </div>
+    <h2 class="outro-title">Let's <span class="em">build</span>.</h2>
+    <p class="outro-role" data-i18n="outro.role">Desenvolvedora Full Stack · BR</p>
+    <a href="#contact" class="outro-cta" data-i18n="outro.cta">Começar um projeto →</a>
+    <div class="outro-socials">
+        <a href="https://www.linkedin.com/in/larissalima01" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+        </a>
+        <a href="https://github.com/larislima11" target="_blank" rel="noreferrer" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58l-.01-2.05c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.11-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6.01 0c2.29-1.55 3.3-1.23 3.3-1.23.65 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.62-5.48 5.92.43.37.81 1.1.81 2.22l-.01 3.29c0 .32.21.7.82.58A12 12 0 0 0 24 12.5C24 5.87 18.63.5 12 .5z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/limastudio.web" target="_blank" rel="noreferrer" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg>
+        </a>
+        <a href="https://wa.me/5515981605571" target="_blank" rel="noreferrer" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49 0 1.47 1.07 2.89 1.22 3.09.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35zM12 2a10 10 0 0 0-8.6 15.06L2 22l5.06-1.33A10 10 0 1 0 12 2z"/></svg>
+        </a>
+      </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <div class="container footer-row">
+    <span data-i18n="footer.tag">café, código e atenção aos detalhes</span>
+    <span data-i18n="footer.rights">© 2026 Larissa Lima · todos os direitos reservados</span>
+  </div>
+</footer>
+
+<script src="js/i18n.js"></script>
+<script src="js/neural-bg.js"></script>
+<script src="js/app.js"></script>
+<script src="js/terminal.js"></script>
+</body>
+</html>
